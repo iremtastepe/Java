@@ -1,0 +1,27 @@
+Örnek Konu: İşe Alım Süreci ve Çalışanların Performansı
+Senaryo: Bir şirkette farklı çalışma türleri (Tam Zamanlı, Yarı Zamanlı, Stajyer) olan çalışanlar var.
+Ayrıca bu çalışanların performansını değerlendiren bir sistem var. Her çalışma türü için belirli
+bir performans değerlendirme kriteri var. Çalışanların işe alınabilmesi için bir performans sınavından
+geçmeleri gerekiyor. Eğer sınav notu belirlenen minimum sınırın üzerinde ise çalışan işe alınır, aksi halde alınmaz.
+Performans değerlendirme sonucuna göre ise çalışanların işten çıkarılıp çıkarılmayacağı belirlenir.
+
+Taslak Sınıflar:
+
+Abstract Class - IsDurumu (İşe Alınma Durumu)
+public abstract boolean IsAlim(int sinavNotu);
+
+Abstract Class - Performans
+public abstract boolean PerformansDegerlendirme(double performansNotu);
+
+Concrete Classes:
+TamZamanli (extends Performans): Performans değerlendirme notu 70'in üzerinde olmalı.
+YariZamanli (extends Performans): Performans değerlendirme notu 60'ın üzerinde olmalı.
+Stajyer (extends Performans): Performans değerlendirme notu 50'nin üzerinde olmalı.
+StandartIs (extends IsDurumu): Sınav notu 65'in üzerinde olmalı.
+ZorlayiciIs (extends IsDurumu): Sınav notu 80'in üzerinde olmalı.
+Calisan Sınıfı:
+
+Çalışanın bilgilerini ve çalışma türlerini (Performans ve IsDurumu) içerir.
+Main Sınıfı:
+
+Çalışanları oluştur ve işe alım ve performans kriterlerini test et.
